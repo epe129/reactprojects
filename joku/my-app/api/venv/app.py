@@ -37,7 +37,9 @@ def two():
         for value in file_data["blogit"]:
             print(value)
             data.append(value)
+    
     print(data)    
+
     return jsonify(data)
 
 

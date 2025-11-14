@@ -12,20 +12,54 @@ export default function Home() {
     event.preventDefault();
     
     let onko = todos.includes(tehtava);
-    
-    if (onko == false) {
+ 
+    if (onko === false) {
       todos.push(tehtava)    
+    } else if  (onko === true) {
+      return null;
     } 
     
-    let text = "";
-
     for (let i = 0; i < todos.length; i++) {
-      text += todos[i] + "<br>";
+      var li = document.createElement("LI");
+      var teh = document.createTextNode(todos[i]);
+        
+      var button = document.createElement("BUTTON");
+      var buttonName = document.createTextNode("delete");
+      button.setAttribute("id", `${tehtava}`);
+        
+      li.appendChild(teh);
+      button.appendChild(buttonName);
+    
+    }
+      
+    try {
+      document.getElementById("todo").appendChild(li);
+      document.getElementById("todo").appendChild(button);
+    } catch (error) {
+      console.log("moi")
     }
 
-    document.getElementById("demo").innerHTML = text;
+
+    const b = document.querySelector(`#${tehtava}`);
+
+    b.addEventListener("click", (event) => {
+
+      let index = todos.findIndex(item => item === b.id)
+
+      todos.splice(index, index+1);
+
+      const list = document.getElementById("todo");
+      
+      if (list.hasChildNodes()) {
+        list.removeChild(list.children[index * 2]);
+        list.removeChild(list.children[index * 2]);
+      }     
+
+    });
+
   };
   
+
   return (
     <div className={styles.main}>
       <h1 className={styles.h1}>Todo app</h1>
@@ -33,7 +67,8 @@ export default function Home() {
         <form className={styles.form} onSubmit={handleSubmit}>
           Todo: <input className={styles.input} value={tehtava} onChange={e => setTehtava(e.target.value)}/>
         </form>
-        <p className={styles.tehtavat} id="demo"></p>
+        <ul id="todo">
+        </ul>
       </div>
     </div>
   );
