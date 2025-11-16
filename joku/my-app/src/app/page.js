@@ -17,6 +17,9 @@ export default function Home() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ blogi: `${blogi}`, title: `${title}`}),
     })
+
+    location.reload();
+    
   }
 
     

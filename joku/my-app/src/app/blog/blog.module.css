@@ -18,8 +18,11 @@
 
 .div {
     width: 30%;
+    height: 100%;
+    padding: 5px;
     background-color: rgb(64, 64, 64);
     display: flex;
+    border-radius: 5px;
     justify-content: center;
     margin: 0 auto;
     flex-direction: column;
