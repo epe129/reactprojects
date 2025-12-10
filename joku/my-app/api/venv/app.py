@@ -49,6 +49,8 @@ def two():
 
         poista = datarequest["poista"]
 
+        print(poista)
+
         pituus = len(datarequest["poista"]) - 1
         
         res = poista[:pituus] + poista[pituus + 1:]
