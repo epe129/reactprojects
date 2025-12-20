@@ -6,6 +6,7 @@ function Eapp() {
   const [nimi, setNimi] = useState("");
   const [kuvaus, setKuvaus] = useState("");
   const [maara, setMaara] = useState("");
+  const [tekija, setTekija] = useState("");
   
   useEffect(() => {
     fetch("/api/hello")
@@ -24,11 +25,10 @@ function Eapp() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ nimi: `${nimi}`, kuvaus: `${kuvaus}`, maara: `${maara}`, }),
+      body: JSON.stringify({ nimi: `${nimi}`, kuvaus: `${kuvaus}`, maara: `${maara}`, tekija: `${tekija}` }),
     });
   };
 
-  
 
   return (
     <>
@@ -41,6 +41,11 @@ function Eapp() {
           </label>
           <input style={{ float: "left"}} name="kirjaNimi" placeholder="nimi" value={nimi} onChange={e => setNimi(e.target.value)} />
           
+          <label style={{ float: "left"}}>
+            kirjantekijä: 
+          </label>
+          <input style={{ float: "left"}} name="kirjaNimi" placeholder="nimi" value={tekija} onChange={e => setTekija(e.target.value)} />
+
           <label style={{ float: "left"}}>
             kirjakuvaus: 
           </label>
