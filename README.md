@@ -1,5 +1,5 @@
 
-# React & Next.js Projects Workspace
+# React Projects Workspace
 
 This workspace contains several web app projects built with React, Next.js, Vite, and Flask. Below is a summary of each project:
 
