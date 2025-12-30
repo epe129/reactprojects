@@ -1,6 +1,5 @@
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, redirect
 import sqlite3
-import json
 
 app = Flask(__name__)
 
@@ -74,6 +73,25 @@ def api2():
 
     return jsonify({"message": "Hello from Flask!"})
 
+@app.route("/poista", methods=["POST"])
+def poista():
+    if request.method == 'POST':
+                
+        GETtitle = request.form['button']
+
+        print(GETtitle)
+
+        connection_obj = sqlite3.connect('/home/lenni/home/koodit/nextprojects/firststackBACKEND/venv/db/kirjat.db')
+
+        cursor_obj = connection_obj.cursor()
+
+        cursor_obj.execute(f'DELETE FROM KIRJA WHERE Kirjannimi="{GETtitle}"')
+
+        connection_obj.commit()
+
+        connection_obj.close()
+    
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run()

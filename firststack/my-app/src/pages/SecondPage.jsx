@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from "./SecondPage.module.css";
 
 function First() {
   const [message, setMessage] = useState("");
@@ -10,45 +11,26 @@ function First() {
   }, [])
 
   const renderedItems = [];
-
   for (let i = 0; i < message.length; i++) {
-    renderedItems.push(<div style={{
-      width: "30%",
-      margin: "0 auto"
-    }} key={i}>
-      
-      <br/>
-      <br/>
-
-      <span style={{fontSize: "2rem"}}><span style={{ fontWeight: "900"}}>Nimi:</span> {message[i][0]}</span>
-      
-      <br/>
-      
-      <span style={{fontSize: "2rem"}}><span style={{ fontWeight: "900"}}>tekija:</span>{message[i][1]}</span>
-      
-      <br/>
-      
-      <span style={{fontSize: "2rem"}}><span style={{ fontWeight: "900"}}>kuvaus:</span> {message[i][2]}</span>
-      
-      <br/>
-      
-      <span style={{fontSize: "2rem"}}><span style={{ fontWeight: "900"}}>päivämäärä:</span> {message[i][3]}</span>
-      
-      <br/>
-      
-      <span style={{fontSize: "2rem"}}><span style={{ fontWeight: "900"}}>hinta:</span> {message[i][4]}€</span>
-      
-      </div>);
+    renderedItems.push(
+      <div className={styles.bookCard} key={i}>
+        <div className={styles.bookField}><strong>Kirjan nimi:</strong> {message[i][0]}</div>
+        <div className={styles.bookField}><strong>kirjantekijä:</strong> {message[i][1]}</div>
+        <div className={styles.bookField}><strong>kuvaus:</strong> {message[i][2]}</div>
+        <div className={styles.bookField}><strong>päivämäärä:</strong> {message[i][3]}</div>
+        <div className={styles.bookField}><strong>kirjanhinta:</strong> {message[i][4]}€</div>
+      </div>
+    );
   }
   
   return (
-    <>
-      <h1 style={{ fontSize: "3rem" }}>hei, katso kirjoja tietokannasta</h1>
-      <div style={{ float: "none", textAlign: "left"}}>
+    <div className={styles.pageContainer}>
+      <h1 className={styles.pageTitle}>hei, katso kirjoja tietokannasta</h1>
+      <div className={styles.booksList}>
         {renderedItems}
       </div>
-    </>
-  )
+    </div>
+  );
 }
 
 export default First

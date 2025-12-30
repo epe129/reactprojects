@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { data } from "react-router-dom";
 
 function Eapp() {
   const [nimi, setNimi] = useState("");
@@ -23,42 +22,30 @@ function Eapp() {
 
 
   return (
-    <>
-      <h1 style={{ fontSize: "3rem" }}>hei, lisää kirja tietokantaan</h1>
+    <div className="form-page-container">
+      <h1 className="form-title">hei, lisää kirja tietokantaan</h1>
+      <div className="form-wrapper">
+        <form onSubmit={handleSubmit} className="book-form">
+          <label className="form-label">kirjan nimi:</label>
+          <input className="form-input" name="kirjaNimi" placeholder="nimi" value={nimi} onChange={e => setNimi(e.target.value)} required />
 
-      <div style={{display: "flex", margin: "0 auto", position: "absolute", left: "50%", right: "50%"}}>
-        <form onSubmit={handleSubmit} style={{ width: "180px"}}>
-          <label style={{ float: "left"}}>
-            kirjanimi: 
-          </label>
-          <input style={{ float: "left"}} name="kirjaNimi" placeholder="nimi" value={nimi} onChange={e => setNimi(e.target.value)} required/>
-          
-          <label style={{ float: "left"}}>
-            kirjantekijä: 
-          </label>
-          <input style={{ float: "left"}} name="kirjaTekija" placeholder="tekijä" value={tekija} onChange={e => setTekija(e.target.value)} required/>
+          <label className="form-label">kirjantekijä:</label>
+          <input className="form-input" name="kirjaTekija" placeholder="tekijä" value={tekija} onChange={e => setTekija(e.target.value)} required />
 
-          <label style={{ float: "left"}}>
-            kirjanhinta: 
-          </label>
-          <input type="number" style={{ float: "left"}} name="kirjaHinta" placeholder="hinta" value={hinta} onChange={e => setHinta(e.target.value)} required/>
+          <label className="form-label">kirjanhinta:</label>
+          <input type="number" className="form-input" name="kirjaHinta" placeholder="hinta" value={hinta} onChange={e => setHinta(e.target.value)} required />
 
-          <label style={{ float: "left"}}>
-            kirjakuvaus: 
-          </label>
-          <textarea style={{ float: "left"}} rows={10} cols={50} name="kirjanKuvaus" placeholder="kuvaus"  value={kuvaus} onChange={e => setKuvaus(e.target.value)} required/>
-          
-          <label style={{ float: "left"}}>
-            kirjajulkaisupäivä: 
-          </label>
-          <input style={{ float: "left", marginBottom: "20px"}} type="date" placeholder="päivä"  value={maara} onChange={e => setMaara(e.target.value)} required/>
-          
-          <button style={{ float: "left", border: "none", backgroundColor: "#00bedbff", fontSize: "1rem", borderRadius: "5px", cursor: "pointer"}} type="submit">Submit form</button>
+          <label className="form-label">kirjakuvaus:</label>
+          <textarea className="form-textarea" rows={5} name="kirjanKuvaus" placeholder="kuvaus" value={kuvaus} onChange={e => setKuvaus(e.target.value)} required />
+
+          <label className="form-label">kirjajulkaisupäivä:</label>
+          <input className="form-input" type="date" placeholder="päivä" value={maara} onChange={e => setMaara(e.target.value)} required />
+
+          <button className="form-submit-btn" type="submit">Submit form</button>
         </form>
       </div>
-
-    </>
-  )
+    </div>
+  );
 }
 
 export default Eapp
