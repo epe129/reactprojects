@@ -28,7 +28,7 @@
             <span><span style="font-weight: 900;">kirjanhinta:</span> {{ item[4] }}€</span>
             
             <form style="float: right;" method="POST" action="{{ url_for('poista') }}">
-                <button name="button" value="{{ item[0] }}">delete</button>
+                <button name="button" value="{{ item[0] }}" style="border: 1px solid rgb(186, 186, 186); border-radius: 5px; font-size: 1rem; background-color: rgb(0, 255, 255); cursor: pointer; color: black;">delete</button>
             </form>
         </div>
         <br/>
