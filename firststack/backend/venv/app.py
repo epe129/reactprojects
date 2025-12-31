@@ -7,7 +7,7 @@ app = Flask(__name__)
 def page():
     data = []
 
-    conn = sqlite3.connect('/home/lenni/home/koodit/nextprojects/firststackBACKEND/venv/db/kirjat.db')
+    conn = sqlite3.connect('/home/lenni/home/koodit/nextprojects/firststack/backend/venv/db/db.db')
 
     cursor_obj = conn.cursor()
 
@@ -29,7 +29,7 @@ def page():
 
 @app.route("/api/hello", methods=["GET"])
 def api1():
-    conn = sqlite3.connect('/home/lenni/home/koodit/nextprojects/firststackBACKEND/venv/db/kirjat.db')
+    conn = sqlite3.connect('/home/lenni/home/koodit/nextprojects/firststack/backend/venv/db/db.db')
 
     cursor_obj = conn.cursor()
 
@@ -51,7 +51,7 @@ def api1():
 def api2():
     getData = request.json
 
-    conn = sqlite3.connect('/home/lenni/home/koodit/nextprojects/firststackBACKEND/venv/db/kirjat.db')
+    conn = sqlite3.connect('/home/lenni/home/koodit/nextprojects/firststack/backend/venv/db/db.db')
 
     cursor = conn.cursor()
 
@@ -81,7 +81,7 @@ def poista():
 
         print(GETtitle)
 
-        connection_obj = sqlite3.connect('/home/lenni/home/koodit/nextprojects/firststackBACKEND/venv/db/kirjat.db')
+        connection_obj = sqlite3.connect('/home/lenni/home/koodit/nextprojects/firststack/backend/venv/db/db.db')
 
         cursor_obj = connection_obj.cursor()
 
