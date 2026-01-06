@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from './MovieCard';
 
-const API_URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=7c1746c'
+const API_URL = import.meta.env.VITE_API_URL
 
 
 function Home () {
