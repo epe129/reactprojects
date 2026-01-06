@@ -1,0 +1,39 @@
+.main {
+    margin: 0 auto;
+}
+
+.div {
+    text-align: none;
+    float: left;
+    box-shadow: 5px 5px #e9e9e9;
+    padding: 10px;
+    border: 1px solid rgb(214, 214, 214);
+}
+
+.nav {
+    border-radius: 5px;
+    height: 60%;
+    width: 100%;
+    padding: 10px;
+}
+
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.li {
+    float: left;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    padding: 10px;
+}

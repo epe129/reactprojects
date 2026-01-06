@@ -1,0 +1,30 @@
+.ul {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    padding-right: 40px;
+}
+
+.ul li {
+    font-size: 1.5rem;
+    list-style-type: none;
+    padding: 5px;
+}
+
+.h1 {
+    text-align: center;
+} 
+
+.div {
+    width: 30%;
+    height: 100%;
+    padding: 5px;
+    background-color: rgb(64, 64, 64);
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+    color: white;
+}
