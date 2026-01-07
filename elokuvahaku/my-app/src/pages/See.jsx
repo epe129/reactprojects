@@ -3,7 +3,7 @@ import MovieCard from './MovieCard';
 
 const API_URL = import.meta.env.VITE_API_URL
 
-function See () {
+export default function See () {
     const [movies, setMovies] = useState([]);
     const [userData, setUserData] = useState("");
 
@@ -35,22 +35,21 @@ function See () {
     
     return(
         <>
-        <div style={{ textAlign: "center" }}>
-            <h1>See random movies and series</h1>
+        <div style={{ textAlign: "center", color: "white" }}>
+            <h1 style={{ color: "white"}}>See random movies and series</h1>
             {
             movies?.length > 0 ?
-            (<div className='container'>
+            (<div>
                 {movies.map((movie)=>(
                     <MovieCard movie={movie}/>
                     ))}
                     </div>) :
                     (
                     <div className='empty'>
-                        <h2>No movies Found</h2></div>
+                        <h2 style={{ color: "white"}}>No movies Found</h2></div>
                         )
                         }
         </div> 
         </>  
     )
 }
-export default See

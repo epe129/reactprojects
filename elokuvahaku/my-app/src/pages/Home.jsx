@@ -4,7 +4,7 @@ import MovieCard from './MovieCard';
 const API_URL = import.meta.env.VITE_API_URL
 
 
-function Home () {
+export default function Home () {
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [userData, setUserData] = useState("");
@@ -16,10 +16,6 @@ function Home () {
         setMovies(data.Search);
     }
     
-    // useEffect(() => {
-    //     searchMovies("cop");
-    // }, []);
-
     const handleSubmit = event => {
         event.preventDefault();
         
@@ -35,7 +31,6 @@ function Home () {
         });
     };
 
-
     useEffect(() => {
         fetch('/api/get')
             .then(response => response.json())
@@ -43,14 +38,13 @@ function Home () {
     }, []);
 
     console.log(userData)
-
     
     return(
         <>
         <div style={{ textAlign: "center" }}>
-            <h1>Search movies and series</h1>
+            <h1 style={{ color: "white"}}>Search movies and series</h1>
             
-            <div className='search'>
+            <div>
                 <form onSubmit={handleSubmit}>
                     <input placeholder='search for Movies' value={searchTerm} onChange={(e) =>setSearchTerm(e.target.value)}/>
                     <button type="submit">Submit</button>
@@ -66,12 +60,10 @@ function Home () {
                     </div>) :
                     (
                     <div className='empty'>
-                        <h2>No movies Found</h2></div>
+                        <h2 style={{ color: "white"}}>No movies Found</h2></div>
                         )
                         }
         </div> 
         </>  
     )
 }
-
-export default Home

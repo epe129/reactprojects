@@ -7,6 +7,7 @@ import Hae from "./pages/See";
 const App = () => (
   <div style={{ textAlign: "center" }}>
     <Navbar/>
+    <br/>
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/See" element={<Hae/>} />

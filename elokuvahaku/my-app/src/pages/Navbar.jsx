@@ -5,14 +5,13 @@ const Navbar = () => (
     <nav>
       <ul style={{ listStyleType: "none", padding: 0 }}>
         <li style={{ float: "left", padding: "10px"}}>
-          <Link style={{color: "black", textDecoration: "none", border: "1px solid black", borderRadius: "5px", padding: "2px"}} to="/">Search movies and series</Link>
+          <Link style={{color: "white", textDecoration: "none", border: "1px solid white", borderRadius: "5px", padding: "4px"}} to="/">Search movies and series</Link>
         </li>
         <li style={{ float: "left", padding: "10px"}}>
-          <Link style={{color: "black", textDecoration: "none" , border: "1px solid black", borderRadius: "5px" , padding: "2px"}} to="/See">See movies and series</Link>
+          <Link style={{color: "white", textDecoration: "none" , border: "1px solid white", borderRadius: "5px" , padding: "4px"}} to="/See">See movies and series</Link>
         </li>
       </ul>
     </nav>
   </div>
 );
-
 export default Navbar
