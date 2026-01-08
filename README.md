@@ -16,3 +16,8 @@ This workspace contains several web app projects built with React, Next.js, Vite
 ## 3. todo (Basic Todo App)
 - **Frontend:** Next.js (React)
 - **Description:** A simple todo list app for managing tasks.
+
+## elokuvahaku (Movie Search App)
+- **Frontend:** React + Vite
+- **Backend:** Uses Flask to store all search data in json file.
+- **Description:** An app that allows users to search for movies and series.

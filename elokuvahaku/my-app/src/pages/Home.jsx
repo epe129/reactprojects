@@ -3,23 +3,19 @@ import MovieCard from './MovieCard';
 
 const API_URL = import.meta.env.VITE_API_URL
 
-
 export default function Home () {
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [userData, setUserData] = useState("");
 
     const searchMovies = async (title) => {
         const response = await fetch(`${API_URL}&s=${title}`);
         const data = await response.json();
-
         setMovies(data.Search);
     }
-    
+
     const handleSubmit = event => {
         event.preventDefault();
         
-        console.log(searchTerm)
         searchMovies(searchTerm);
 
         fetch("/api/post", {
@@ -27,17 +23,9 @@ export default function Home () {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ title: "example" }),
+            body: JSON.stringify({ title: `${searchTerm}` }),
         });
     };
-
-    useEffect(() => {
-        fetch('/api/get')
-            .then(response => response.json())
-            .then(data => setUserData(data));
-    }, []);
-
-    console.log(userData)
     
     return(
         <>
