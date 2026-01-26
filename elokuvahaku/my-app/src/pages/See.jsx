@@ -5,7 +5,6 @@ const API_URL = import.meta.env.VITE_API_URL
 
 export default function See () {
     const [movies, setMovies] = useState([]);
-    const [userData, setUserData] = useState("");
 
     const randomSearchTerms = [
         "love", "war", "man", "woman", "dark",
@@ -25,13 +24,8 @@ export default function See () {
         searchMovies(randomTerm);
     }, []);
     
-    useEffect(() => {
-        fetch('/api/get')
-            .then(response => response.json())
-            .then(data => setUserData(data));
-    }, []);
     
-    console.log(userData)
+    
     
     return(
         <>
